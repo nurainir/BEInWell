@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.HazMap.org/hazMap.owl#"
+     xml:base="http://www.HazMap.org/hazMap.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.HazMap.org/hazMap.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#agentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.HazMap.org/hazMap.owl#agentOf">
+        <rdfs:domain rdf:resource="http://www.HazMap.org/hazMap.owl#agent"/>
+        <rdfs:range rdf:resource="http://www.HazMap.org/hazMap.owl#association"/>
+        <owl:inverseOf rdf:resource="http://www.HazMap.org/hazMap.owl#hasAgent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#foundIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.HazMap.org/hazMap.owl#foundIn">
+        <rdfs:domain rdf:resource="http://www.HazMap.org/hazMap.owl#agent"/>
+        <owl:inverseOf rdf:resource="http://www.HazMap.org/hazMap.owl#includes"/>
+        <rdfs:range rdf:resource="http://www.HazMap.org/hazMap.owl#nonOccupationalActivity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#hasAgent -->
+
+    <owl:ObjectProperty rdf:about="http://www.HazMap.org/hazMap.owl#hasAgent">
+        <rdfs:range rdf:resource="http://www.HazMap.org/hazMap.owl#agent"/>
+        <rdfs:domain rdf:resource="http://www.HazMap.org/hazMap.owl#association"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#hasJobSet -->
+
+    <owl:ObjectProperty rdf:about="http://www.HazMap.org/hazMap.owl#hasJobSet">
+        <rdfs:domain rdf:resource="http://www.HazMap.org/hazMap.owl#industry"/>
+        <rdfs:range rdf:resource="http://www.HazMap.org/hazMap.owl#job"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#hasPhenotypeInfo -->
+
+    <owl:ObjectProperty rdf:about="http://www.HazMap.org/hazMap.owl#hasPhenotypeInfo">
+        <rdfs:domain rdf:resource="http://www.HazMap.org/hazMap.owl#association"/>
+        <rdfs:range rdf:resource="http://www.HazMap.org/hazMap.owl#disease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#hasRiskFactor -->
+
+    <owl:ObjectProperty rdf:about="http://www.HazMap.org/hazMap.owl#hasRiskFactor">
+        <rdfs:domain rdf:resource="http://www.HazMap.org/hazMap.owl#association"/>
+        <rdfs:range rdf:resource="http://www.HazMap.org/hazMap.owl#job"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#includes -->
+
+    <owl:ObjectProperty rdf:about="http://www.HazMap.org/hazMap.owl#includes">
+        <rdfs:range rdf:resource="http://www.HazMap.org/hazMap.owl#agent"/>
+        <rdfs:domain rdf:resource="http://www.HazMap.org/hazMap.owl#nonOccupationalActivity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#jobSetOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.HazMap.org/hazMap.owl#jobSetOf">
+        <owl:inverseOf rdf:resource="http://www.HazMap.org/hazMap.owl#hasJobSet"/>
+        <rdfs:range rdf:resource="http://www.HazMap.org/hazMap.owl#industry"/>
+        <rdfs:domain rdf:resource="http://www.HazMap.org/hazMap.owl#job"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#phenotypeInfoOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.HazMap.org/hazMap.owl#phenotypeInfoOf">
+        <rdfs:range rdf:resource="http://www.HazMap.org/hazMap.owl#association"/>
+        <rdfs:domain rdf:resource="http://www.HazMap.org/hazMap.owl#disease"/>
+        <owl:inverseOf rdf:resource="http://www.HazMap.org/hazMap.owl#phenotypeInfoOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#riskFactorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.HazMap.org/hazMap.owl#riskFactorOf">
+        <rdfs:range rdf:resource="http://www.HazMap.org/hazMap.owl#association"/>
+        <owl:inverseOf rdf:resource="http://www.HazMap.org/hazMap.owl#hasRiskFactor"/>
+        <rdfs:domain rdf:resource="http://www.HazMap.org/hazMap.owl#job"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#agent -->
+
+    <owl:Class rdf:about="http://www.HazMap.org/hazMap.owl#agent"/>
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#association -->
+
+    <owl:Class rdf:about="http://www.HazMap.org/hazMap.owl#association"/>
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#chemicalAgent -->
+
+    <owl:Class rdf:about="http://www.HazMap.org/hazMap.owl#chemicalAgent">
+        <rdfs:subClassOf rdf:resource="http://www.HazMap.org/hazMap.owl#agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#disease -->
+
+    <owl:Class rdf:about="http://www.HazMap.org/hazMap.owl#disease"/>
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#industry -->
+
+    <owl:Class rdf:about="http://www.HazMap.org/hazMap.owl#industry"/>
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#job -->
+
+    <owl:Class rdf:about="http://www.HazMap.org/hazMap.owl#job"/>
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#nonOccupationalActivity -->
+
+    <owl:Class rdf:about="http://www.HazMap.org/hazMap.owl#nonOccupationalActivity"/>
+    
+
+
+    <!-- http://www.HazMap.org/hazMap.owl#physicalAgent -->
+
+    <owl:Class rdf:about="http://www.HazMap.org/hazMap.owl#physicalAgent">
+        <rdfs:subClassOf rdf:resource="http://www.HazMap.org/hazMap.owl#agent"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+

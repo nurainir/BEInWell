@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.ctd.org/ctd.owl#"
+     xml:base="http://www.ctd.org/ctd.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.ctd.org/ctd.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#InteractionOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ctd.org/ctd.owl#InteractionOf">
+        <rdfs:range rdf:resource="http://www.ctd.org/ctd.owl#Association"/>
+        <rdfs:domain rdf:resource="http://www.ctd.org/ctd.owl#Interaction"/>
+        <owl:inverseOf rdf:resource="http://www.ctd.org/ctd.owl#hasInteraction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#chemicalIDof -->
+
+    <owl:ObjectProperty rdf:about="http://www.ctd.org/ctd.owl#chemicalIDof">
+        <rdfs:domain rdf:resource="http://www.ctd.org/ctd.owl#ChemicalID"/>
+        <rdfs:range rdf:resource="http://www.ctd.org/ctd.owl#ChemicalName"/>
+        <owl:inverseOf rdf:resource="http://www.ctd.org/ctd.owl#hasChemicalID"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#evidenceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ctd.org/ctd.owl#evidenceOf">
+        <rdfs:range rdf:resource="http://www.ctd.org/ctd.owl#Association"/>
+        <rdfs:domain rdf:resource="http://www.ctd.org/ctd.owl#PubMedIDs"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#geneIDOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ctd.org/ctd.owl#geneIDOf">
+        <rdfs:domain rdf:resource="http://www.ctd.org/ctd.owl#GeneID"/>
+        <rdfs:range rdf:resource="http://www.ctd.org/ctd.owl#GeneSymbol"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#geneOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ctd.org/ctd.owl#geneOf">
+        <rdfs:domain rdf:resource="http://www.ctd.org/ctd.owl#GeneSymbol"/>
+        <rdfs:range rdf:resource="http://www.ctd.org/ctd.owl#Organism"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#hasChemicalID -->
+
+    <owl:ObjectProperty rdf:about="http://www.ctd.org/ctd.owl#hasChemicalID">
+        <rdfs:range rdf:resource="http://www.ctd.org/ctd.owl#ChemicalID"/>
+        <rdfs:domain rdf:resource="http://www.ctd.org/ctd.owl#ChemicalName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#hasEvidence -->
+
+    <owl:ObjectProperty rdf:about="http://www.ctd.org/ctd.owl#hasEvidence">
+        <rdfs:domain rdf:resource="http://www.ctd.org/ctd.owl#Association"/>
+        <rdfs:range rdf:resource="http://www.ctd.org/ctd.owl#PubMedIDs"/>
+        <owl:inverseOf rdf:resource="http://www.ctd.org/ctd.owl#evidenceOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#hasGene -->
+
+    <owl:ObjectProperty rdf:about="http://www.ctd.org/ctd.owl#hasGene">
+        <rdfs:range rdf:resource="http://www.ctd.org/ctd.owl#GeneSymbol"/>
+        <rdfs:domain rdf:resource="http://www.ctd.org/ctd.owl#Organism"/>
+        <owl:inverseOf rdf:resource="http://www.ctd.org/ctd.owl#geneOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#hasGeneID -->
+
+    <owl:ObjectProperty rdf:about="http://www.ctd.org/ctd.owl#hasGeneID">
+        <rdfs:range rdf:resource="http://www.ctd.org/ctd.owl#GeneID"/>
+        <rdfs:domain rdf:resource="http://www.ctd.org/ctd.owl#GeneSymbol"/>
+        <owl:inverseOf rdf:resource="http://www.ctd.org/ctd.owl#geneIDOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#hasInteractingGene -->
+
+    <owl:ObjectProperty rdf:about="http://www.ctd.org/ctd.owl#hasInteractingGene">
+        <rdfs:domain rdf:resource="http://www.ctd.org/ctd.owl#Association"/>
+        <rdfs:range rdf:resource="http://www.ctd.org/ctd.owl#GeneSymbol"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#hasInteractingToxic -->
+
+    <owl:ObjectProperty rdf:about="http://www.ctd.org/ctd.owl#hasInteractingToxic">
+        <rdfs:domain rdf:resource="http://www.ctd.org/ctd.owl#Association"/>
+        <rdfs:range rdf:resource="http://www.ctd.org/ctd.owl#ChemicalName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#hasInteraction -->
+
+    <owl:ObjectProperty rdf:about="http://www.ctd.org/ctd.owl#hasInteraction">
+        <rdfs:domain rdf:resource="http://www.ctd.org/ctd.owl#Association"/>
+        <rdfs:range rdf:resource="http://www.ctd.org/ctd.owl#Interaction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#hasOrganismID -->
+
+    <owl:ObjectProperty rdf:about="http://www.ctd.org/ctd.owl#hasOrganismID">
+        <rdfs:domain rdf:resource="http://www.ctd.org/ctd.owl#Organism"/>
+        <rdfs:range rdf:resource="http://www.ctd.org/ctd.owl#OrganismID"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#interactingGeneOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ctd.org/ctd.owl#interactingGeneOf">
+        <rdfs:range rdf:resource="http://www.ctd.org/ctd.owl#Association"/>
+        <rdfs:domain rdf:resource="http://www.ctd.org/ctd.owl#GeneSymbol"/>
+        <owl:inverseOf rdf:resource="http://www.ctd.org/ctd.owl#hasInteractingGene"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#interactingToxicOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ctd.org/ctd.owl#interactingToxicOf">
+        <rdfs:range rdf:resource="http://www.ctd.org/ctd.owl#Association"/>
+        <rdfs:domain rdf:resource="http://www.ctd.org/ctd.owl#ChemicalName"/>
+        <owl:inverseOf rdf:resource="http://www.ctd.org/ctd.owl#hasInteractingToxic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#organismIDof -->
+
+    <owl:ObjectProperty rdf:about="http://www.ctd.org/ctd.owl#organismIDof">
+        <rdfs:range rdf:resource="http://www.ctd.org/ctd.owl#Organism"/>
+        <rdfs:domain rdf:resource="http://www.ctd.org/ctd.owl#OrganismID"/>
+        <owl:inverseOf rdf:resource="http://www.ctd.org/ctd.owl#hasOrganismID"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#Association -->
+
+    <owl:Class rdf:about="http://www.ctd.org/ctd.owl#Association"/>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#ChemicalID -->
+
+    <owl:Class rdf:about="http://www.ctd.org/ctd.owl#ChemicalID"/>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#ChemicalName -->
+
+    <owl:Class rdf:about="http://www.ctd.org/ctd.owl#ChemicalName"/>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#GeneID -->
+
+    <owl:Class rdf:about="http://www.ctd.org/ctd.owl#GeneID"/>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#GeneSymbol -->
+
+    <owl:Class rdf:about="http://www.ctd.org/ctd.owl#GeneSymbol"/>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#Interaction -->
+
+    <owl:Class rdf:about="http://www.ctd.org/ctd.owl#Interaction"/>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#Organism -->
+
+    <owl:Class rdf:about="http://www.ctd.org/ctd.owl#Organism"/>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#OrganismID -->
+
+    <owl:Class rdf:about="http://www.ctd.org/ctd.owl#OrganismID"/>
+    
+
+
+    <!-- http://www.ctd.org/ctd.owl#PubMedIDs -->
+
+    <owl:Class rdf:about="http://www.ctd.org/ctd.owl#PubMedIDs"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+

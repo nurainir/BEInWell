@@ -1,0 +1,17 @@
+awk '
+ BEGIN {
+         FPAT = "([^,]+)|(\"[^\"]+\")"
+     }
+     
+     {
+           for (i = 1; i <= NF; i++) {
+             printf("%s\t", i, $i)
+         }
+	     printf("\n")
+     }' $1 > ctd.csv
+
+
+awk -F$'\t' '{print $1 "\t" $2 "\t" $4 "\t" $5 "\t" $7 "\t" $8 "\t" $11}'  ctd.csv > ctd2.csv
+mv ctd2.csv ctd.csv
+
+
