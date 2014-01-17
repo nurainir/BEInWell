@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY CancerGAMA "http://www.CancerGAMA.org/CancerGama.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.CancerGAMA.org/CancerGama.owl#"
+     xml:base="http://www.CancerGAMA.org/CancerGama.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:CancerGAMA="http://www.CancerGAMA.org/CancerGama.owl#">
+    <owl:Ontology rdf:about="http://www.CancerGAMA.org/CancerGama.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#alleleOf -->
+
+    <owl:ObjectProperty rdf:about="&CancerGAMA;alleleOf">
+        <rdfs:domain rdf:resource="&CancerGAMA;Contrast"/>
+        <rdfs:range rdf:resource="&CancerGAMA;Variant"/>
+        <owl:inverseOf rdf:resource="&CancerGAMA;hasAllele"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#authorOf -->
+
+    <owl:ObjectProperty rdf:about="&CancerGAMA;authorOf">
+        <rdfs:domain rdf:resource="&CancerGAMA;FirstAuthor"/>
+        <rdfs:range rdf:resource="&CancerGAMA;PubMedID"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#evidenceOf -->
+
+    <owl:ObjectProperty rdf:about="&CancerGAMA;evidenceOf">
+        <rdfs:range rdf:resource="&CancerGAMA;Association"/>
+        <rdfs:domain rdf:resource="&CancerGAMA;PubMedID"/>
+        <owl:inverseOf rdf:resource="&CancerGAMA;hasEvidence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#hasAllele -->
+
+    <owl:ObjectProperty rdf:about="&CancerGAMA;hasAllele">
+        <rdfs:range rdf:resource="&CancerGAMA;Contrast"/>
+        <rdfs:domain rdf:resource="&CancerGAMA;Variant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#hasAuthor -->
+
+    <owl:ObjectProperty rdf:about="&CancerGAMA;hasAuthor">
+        <rdfs:range rdf:resource="&CancerGAMA;FirstAuthor"/>
+        <rdfs:domain rdf:resource="&CancerGAMA;PubMedID"/>
+        <owl:inverseOf rdf:resource="&CancerGAMA;authorOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#hasEvidence -->
+
+    <owl:ObjectProperty rdf:about="&CancerGAMA;hasEvidence">
+        <rdfs:domain rdf:resource="&CancerGAMA;Association"/>
+        <rdfs:range rdf:resource="&CancerGAMA;PubMedID"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#hasPhenotypeInfo -->
+
+    <owl:ObjectProperty rdf:about="&CancerGAMA;hasPhenotypeInfo">
+        <rdfs:domain rdf:resource="&CancerGAMA;Association"/>
+        <rdfs:range rdf:resource="&CancerGAMA;Phenotype"/>
+        <owl:inverseOf rdf:resource="&CancerGAMA;phenotypeInfoOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#hasPublished -->
+
+    <owl:ObjectProperty rdf:about="&CancerGAMA;hasPublished">
+        <rdfs:domain rdf:resource="&CancerGAMA;Journal"/>
+        <rdfs:range rdf:resource="&CancerGAMA;PubMedID"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#hasVariantID -->
+
+    <owl:ObjectProperty rdf:about="&CancerGAMA;hasVariantID">
+        <rdfs:domain rdf:resource="&CancerGAMA;Association"/>
+        <rdfs:range rdf:resource="&CancerGAMA;Variant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="&CancerGAMA;locatedIn">
+        <rdfs:range rdf:resource="&CancerGAMA;Gene"/>
+        <rdfs:domain rdf:resource="&CancerGAMA;Variant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#locationOf -->
+
+    <owl:ObjectProperty rdf:about="&CancerGAMA;locationOf">
+        <rdfs:domain rdf:resource="&CancerGAMA;Gene"/>
+        <rdfs:range rdf:resource="&CancerGAMA;Variant"/>
+        <owl:inverseOf rdf:resource="&CancerGAMA;locatedIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#phenotypeInfoOf -->
+
+    <owl:ObjectProperty rdf:about="&CancerGAMA;phenotypeInfoOf">
+        <rdfs:range rdf:resource="&CancerGAMA;Association"/>
+        <rdfs:domain rdf:resource="&CancerGAMA;Phenotype"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#publishedBy -->
+
+    <owl:ObjectProperty rdf:about="&CancerGAMA;publishedBy">
+        <rdfs:range rdf:resource="&CancerGAMA;Journal"/>
+        <rdfs:domain rdf:resource="&CancerGAMA;PubMedID"/>
+        <owl:inverseOf rdf:resource="&CancerGAMA;hasPublished"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#variantIDof -->
+
+    <owl:ObjectProperty rdf:about="&CancerGAMA;variantIDof">
+        <rdfs:range rdf:resource="&CancerGAMA;Association"/>
+        <rdfs:domain rdf:resource="&CancerGAMA;Variant"/>
+        <owl:inverseOf rdf:resource="&CancerGAMA;hasVariantID"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#CI95 -->
+
+    <owl:DatatypeProperty rdf:about="&CancerGAMA;CI95">
+        <rdfs:domain rdf:resource="&CancerGAMA;Association"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#Case -->
+
+    <owl:DatatypeProperty rdf:about="&CancerGAMA;Case">
+        <rdfs:domain rdf:resource="&CancerGAMA;Association"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#Control -->
+
+    <owl:DatatypeProperty rdf:about="&CancerGAMA;Control">
+        <rdfs:domain rdf:resource="&CancerGAMA;Association"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#OR -->
+
+    <owl:DatatypeProperty rdf:about="&CancerGAMA;OR">
+        <rdfs:domain rdf:resource="&CancerGAMA;Association"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#pValue -->
+
+    <owl:DatatypeProperty rdf:about="&CancerGAMA;pValue">
+        <rdfs:domain rdf:resource="&CancerGAMA;Association"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#publicationYear -->
+
+    <owl:DatatypeProperty rdf:about="&CancerGAMA;publicationYear">
+        <rdfs:domain rdf:resource="&CancerGAMA;PubMedID"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#Association -->
+
+    <owl:Class rdf:about="&CancerGAMA;Association"/>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#Contrast -->
+
+    <owl:Class rdf:about="&CancerGAMA;Contrast"/>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#FirstAuthor -->
+
+    <owl:Class rdf:about="&CancerGAMA;FirstAuthor"/>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#Gene -->
+
+    <owl:Class rdf:about="&CancerGAMA;Gene"/>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#Journal -->
+
+    <owl:Class rdf:about="&CancerGAMA;Journal"/>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#Phenotype -->
+
+    <owl:Class rdf:about="&CancerGAMA;Phenotype"/>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#PubMedID -->
+
+    <owl:Class rdf:about="&CancerGAMA;PubMedID"/>
+    
+
+
+    <!-- http://www.CancerGAMA.org/CancerGama.owl#Variant -->
+
+    <owl:Class rdf:about="&CancerGAMA;Variant"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+
